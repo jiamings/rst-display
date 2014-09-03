@@ -3,7 +3,8 @@
 > 
 > **Time:** 8/28/2013
 
-All the source for RST implementations can be found on **RST/lib**. Since this is an outdated project, I will not provide other support. The code should be correct.
+### **Notice**
+All the source for RST implementations can be found on `RST/lib`. Since this is an outdated project, I will not provide other support. The code should be correct.
 
 This is the document for my project for the Qt class. It is used to display Rectilinear Steiner Trees using a Qt Application.
 
