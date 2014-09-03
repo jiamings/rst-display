@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ch">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Some Thoughts During My Project</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+					<h2>Some Thoughts During My Project</h2>
+					<h3>Tony Soong</h3>
+					<p>计22班</p>
+					<p>2012011271</p>
+				</section>
+				
+				<section data-background="#4e69a2">
+					<h2>RST和LMST</h2>
+					<p>
+						RST是Rectilinear Steiner Tree的缩写，和最小生成树(MST)很类似，只不过多了一个限制：所有边都必须与给定的x轴或y轴
+						垂直。<br/>在论文二中，作者希望找出满足这样条件的RST：这个RST连接任何两个点的边都是L型。
+					</p>
+				</section>
+
+				<section data-background="#305d7b">
+					<h2>效果图</h2>
+					<a class="lmst">
+						<img width="684" height="383" src="./pictures/lmst.png">
+					</a>
+				</section>
+
+				<section>
+					<section data-background="#1b6b52">
+						<h2>LMST的实现方法：理论上</h2>
+						<ul>
+							<li class="fragment">根据论文中的权值公式和Prim算法生成SMST</li>
+							<li class="fragment">根据SMST，进行记忆化搜索，得出每个点的psi_l和psi_u</li>
+						</ul>
+					</section>
+					<section data-background="#8c4738" data-background-transition="slide">
+						<h2>实际注意事项</h2>
+						<ul>
+							<li class="fragment">数据离散化</li>
+							<li class="fragment">只有1个点的特殊情况</li>
+							<li class="fragment">记住最优解对应的结果</li>
+							<li class="fragment">对递归关系的理解</li>
+						</ul>
+					</section>
+				</section>
+				<section data-background="f2b844">
+					<h2>CamelCase: 驼峰拼写法</h2>
+					<ul>
+						<li class="fragment"><code>class MainWindow</code></li>
+						<li class="fragment"><code>void mousePressEvent</code></li>
+						<li class="fragment"><code>QAction lmstAction</code></li>
+					</ul>
+					<p class="fragment grow">最好不要在单词中间加下划线......</p>
+				</section>
+				<section>
+					<section data-background="#3b5998" data-background-transition="slide">
+						<h3>我的大作业实现</h3>
+						<ul>
+							<li class="fragment">修改自己的接口(读代码吧少年！)</li>
+							<li class="fragment">创建SketchPad类以帮助处理读入数据+画图(感谢ysc为SketchPad冠名)</li>
+							<li class="fragment">确定现实世界和屏幕世界的算法</li>
+							<li class="fragment">计算事件发生和处理的逻辑</li>
+						</ul>
+					</section>
+					<section data-background="#27408b" data-background-transition="slide">
+						<h3>SketchPad类到底做什么？</h3>
+						<ul>
+							<li class="fragment">保存真实世界的点线坐标</li>
+							<li class="fragment">计算三种算法的分布方案</li>
+							<li class="fragment">处理各种鼠标事件</li>
+						</ul>
+					</section>
+					<section data-background="#238b57" data-background-transition="slide">
+						<h3>真实世界 VS. 像素世界</h3>
+						<p>协助数据：(xView, yView), scale, (xFocus, yFocus)</p>
+						<p>简单的转换公式: <pre><code>(newX, newY) = ((x-xFocus+xView)*scale+xFocus , (y-yFocus+yView)*scale+yFocus)</code></pre></p>
+						<p class="fragment shrink">不是特别完美，但是基本够了:-)</p>
+					</section>
+					<section data-background="#8b8652" data-background-transition="slide">
+						<h3>事件逻辑</h3>
+						<p>
+							同为右键单击，如果点在点上就能删除，点在空白就能创建新点；而右键拖动移动视角，
+							同时和右键有关的处理应该如何进行？
+						</p>
+						<h3 class="fragment">用if-else和额外的变量吧少年！</h3>
+					</section>
+				</section>
+				
+				<section>
+					<h3>抛砖引玉结束——谢谢大家！</h3>
+					<a class="ysc">
+						<img src="./pictures/ysc.png">
+					</a>
+				</section>
+			</div>
+		</div>
+
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+				{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+				{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+				{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+				// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

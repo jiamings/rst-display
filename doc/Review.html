@@ -1,0 +1,347 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Review</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* Markdown.css */
+/* Authors: Kevin Burke: http://kev.inburke.com/, modified by Evan Wondrasek  */
+/* https://bitbucket.org/kevinburke/markdowncss */
+
+body{
+    margin: 0 auto;
+    font-family: Georgia, Palatino, serif;
+    color: #444444;
+    line-height: 1;
+    max-width: 960px;
+    padding: 5px;
+}
+h1, h2, h3, h4 {
+    color: #111111;
+    font-weight: 400;
+}
+h1, h2, h3, h4, h5, p {
+    margin-bottom: 16px;
+    padding: 0;
+}
+h1 {
+    font-size: 28px;
+}
+h2 {
+    font-size: 22px;
+    margin: 20px 0 6px;
+}
+h3 {
+    font-size: 21px;
+}
+h4 {
+    font-size: 18px;
+}
+h5 {
+    font-size: 16px;
+}
+a {
+    color: #0099ff;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+a:hover {
+    text-decoration: none;
+    color: #ff6600;
+}
+a:visited {
+    color: purple;
+}
+ul, ol {
+    padding: 0;
+    margin: 0;
+}
+li {
+    line-height: 24px;
+    margin-left: 44px;
+}
+li ul, li ul {
+    margin-left: 24px;
+}
+p, ul, ol {
+    font-size: 14px;
+    line-height: 20px;
+    max-width: 540px;
+}
+pre {
+    padding: 0px 24px;
+    max-width: 800px;
+    white-space: pre-wrap;
+}
+code {
+    font-family: Consolas, Monaco, Andale Mono, monospace;
+    line-height: 1.5;
+    font-size: 13px;
+}
+aside {
+    display: block;
+    float: right;
+    width: 390px;
+}
+blockquote {
+    border-left:.5em solid #eee;
+    padding: 0 2em;
+    margin-left:0;
+    max-width: 476px;
+}
+blockquote  cite {
+    font-size:14px;
+    line-height:20px;
+    color:#bfbfbf;
+}
+blockquote cite:before {
+    content: '\2014 \00A0';
+}
+
+blockquote p {  
+    color: #666;
+    max-width: 460px;
+}
+hr {
+    width: 540px;
+    text-align: left;
+    margin: 0 auto 0 0;
+    color: #999;
+}
+
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  *vertical-align: middle;
+}
+button, input {
+  line-height: normal;
+  *overflow: visible;
+}
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+input[type=checkbox], input[type=radio] {
+  cursor: pointer;
+}
+/* override default chrome & firefox settings */
+input:not([type="image"]), textarea {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+label,
+input,
+select,
+textarea {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: normal;
+  margin-bottom: 18px;
+}
+input[type=checkbox], input[type=radio] {
+  cursor: pointer;
+  margin-bottom: 0;
+}
+input[type=text],
+input[type=password],
+textarea,
+select {
+  display: inline-block;
+  width: 210px;
+  padding: 4px;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  height: 18px;
+  color: #808080;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+select, input[type=file] {
+  height: 27px;
+  line-height: 27px;
+}
+textarea {
+  height: auto;
+}
+
+/* grey out placeholders */
+:-moz-placeholder {
+  color: #bfbfbf;
+}
+::-webkit-input-placeholder {
+  color: #bfbfbf;
+}
+
+input[type=text],
+input[type=password],
+select,
+textarea {
+  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+  transition: border linear 0.2s, box-shadow linear 0.2s;
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+input[type=text]:focus, input[type=password]:focus, textarea:focus {
+  outline: none;
+  border-color: rgba(82, 168, 236, 0.8);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+}
+
+/* buttons */
+button {
+  display: inline-block;
+  padding: 4px 14px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  background-color: #0064cd;
+  background-repeat: repeat-x;
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#049cdb), to(#0064cd));
+  background-image: -moz-linear-gradient(top, #049cdb, #0064cd);
+  background-image: -ms-linear-gradient(top, #049cdb, #0064cd);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #049cdb), color-stop(100%, #0064cd));
+  background-image: -webkit-linear-gradient(top, #049cdb, #0064cd);
+  background-image: -o-linear-gradient(top, #049cdb, #0064cd);
+  background-image: linear-gradient(top, #049cdb, #0064cd);
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  border: 1px solid #004b9a;
+  border-bottom-color: #003f81;
+  -webkit-transition: 0.1s linear all;
+  -moz-transition: 0.1s linear all;
+  transition: 0.1s linear all;
+  border-color: #0064cd #0064cd #003f81;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+}
+button:hover {
+  color: #fff;
+  background-position: 0 -15px;
+  text-decoration: none;
+}
+button:active {
+  -webkit-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+</style>
+</head>
+<body>
+<h2>Display RST Application Review</h2>
+<blockquote>
+<p><strong>Author:</strong> Tony Soong (2012011271)</p>
+<p><strong>Time:</strong> 8/28/2013</p>
+</blockquote>
+<p>This is the document for my project for the Qt class. It is used to display Rectilinear Steiner Trees using a Qt Application.</p>
+<h3>Usage</h3>
+<ul>
+<li><strong>Help(Ctrl+H):</strong> Displays help for the project.</li>
+<li><strong>File-&gt;Read(Ctrl+R):</strong> Reads some point data from a file, and displays them.</li>
+<li><strong>File-&gt;Refresh(Ctrl+E):</strong>  Clears all the lines on the window, and resets the view point.</li>
+<li><strong>File-&gt;Clean(Ctrl+C):</strong> Clears everything on the window.</li>
+<li><strong>Algorithm-&gt;SMST(Ctrl+S):</strong> Displays the Minimum Spanning Tree of the points.</li>
+<li><strong>Algorithm-&gt;LMST(Ctrl+L):</strong> Displays the RST obtained by algorithm of LMST.</li>
+<li><strong>Algorithm-&gt;ZMST(Ctrl+Z):</strong> Displays the RST obtained by algorithm of ZMST.</li>
+<li><strong>Add Point:</strong> Use <strong>Add Point(Ctrl+N)</strong> or <strong>Right Click</strong> on a place without points.</li>
+<li><strong>Delete Point:</strong> <strong>Right Click</strong> on a point to delete that point.</li>
+<li><strong>Drag Point:</strong> <strong>Left Click</strong>  on a point and drag the point to replace the point.</li>
+<li><strong>Move Viewpoint:</strong> Use <strong>Arrow Keys</strong> or <strong>Right Click &amp; Drag</strong> to move the whole canvas.</li>
+<li><strong>Zoom In/Zoom Out:</strong> Use <strong>Zoom In(Ctrl+&gt;)</strong>, <strong>Zoom Out(Ctrl+&lt;)</strong>, or the <strong>mouse wheel</strong>.</li>
+</ul>
+<h3>Classes</h3>
+<ul>
+<li><strong>MainWindow:</strong> the main window for the application.</li>
+<li><strong>SketchPad:</strong> the class for painting and stores the data of points and lines.</li>
+<li><strong>AddPoint:</strong> (inherited from QDialog) the class used to manually add a point.</li>
+</ul>
+<h3>Functions</h3>
+<h4>MainWindow</h4>
+<p>The <code>MainWindow</code> class mainly creates the overall environment of the class, such as the menu bars, tool bars, and status bars. The first two contains the actions connected to the <code>SketchPad</code> class pointer, namely <code>MainWindow.sketchpad</code>, which further operates the data and displays the points.</p>
+<h4>SketchPad</h4>
+<p>The <code>SketchPad</code> class gets input from files or manually, deals with the algorithms(SMST, LMST, ZMST) and paints the points by using <code>QPainter</code> and <code>paintEvent()</code>. Whenever we change the points or lines in <code>SketchPad</code>, it will call <code>update()</code> and renews the picture.</p>
+<blockquote>
+<p>Note that the MainWindow also deals with keyborad inputs as the <code>MainWindow.sketchpad</code> cannot be selected by keyborad input, while mouse inputs are dealt in <code>SketchPad</code> class, since we need to further information on the exact positions of the points, and doing it in <code>MainWindow</code> will cause deviations(for about (0px, -40px) on my computer).</p>
+</blockquote>
+<h4>AddPoint</h4>
+<p><code>AddPoint</code> is a simple QDialog class which uses hard-coded layouts, and deals with input points.</p>
+<h3>Implementations</h3>
+<h4>Event Handling</h4>
+<p>Event handling is largely used. In this project, <code>wheelEvent()</code>, <code>mouseMoveEvent()</code>, <code>mousePressEvent()</code>, <code>mouseReleaseEvent()</code>, <code>keyPressEvent()</code> and <code>paintEvent()</code> are used. They mainly serve to change the data points and repaint the picture. Private variables are used for them to temporarily store the data generated by previous events, so that posterior events can use them for calculation, such as:</p>
+<pre><code>void SketchPad::mousePressEvent(QMouseEvent *event) {
+    if (event-&gt;button() == Qt::RightButton) {
+        rightStartPos = event-&gt;pos();
+        rightDragged = false;
+        rightSelected = -1;
+        //...
+    }
+    //...
+}
+</code></pre>
+
+<h4>Painting</h4>
+<p>Painting is very essential for correct event handling. This implementation uses three variables to calculate the display position of points, namely (<code>xView</code>, <code>yView</code>), (<code>xFocus</code>, <code>yFocus</code>), and <code>scale</code>. <code>xView</code> and <code>yView</code> adjusts the view point of the canvas and is largely used in transition; <code>scale</code> adjusts the size of the canvas which is used in zooming; <code>xFocus</code> and <code>yFocus</code> adjusts the central point for zooming. The function to derive the painting point from the original point(and vice versa) are as follows:</p>
+<pre><code>Point SketchPad::calculatePaintPoint(int x, int y) {
+    int xx = (x - xFocus) * scale + xFocus + xView;
+    int yy = (y - yFocus) * scale + yFocus + yView;
+    return Point(xx, yy);
+}
+
+Point SketchPad::calculateOriginalPoint(int x, int y) {
+    int xx = (x - xFocus - xView) / scale + xFocus;
+    int yy = (y - yFocus - yView) / scale + yFocus;
+    return Point(xx, yy);
+}
+</code></pre>
+
+<h4>Slots and Signals</h4>
+<p>These are very simple actions for us to connect with Qt predefined classes, and we don't need them between our classes.</p>
+<pre><code>readAction = new QAction(tr(&quot;&amp;Read&quot;), this);
+readAction -&gt; setShortcut(tr(&quot;Ctrl+R&quot;));
+connect(readAction, SIGNAL(triggered()), this, SLOT(read()));
+</code></pre>
+
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
